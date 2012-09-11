@@ -1,0 +1,220 @@
+#wrapper{
+width: 970px;
+margin: auto;
+}	
+#cssmenu{
+	border:none;
+	border:0px;
+	margin:0px;
+	padding:0px;
+	font: 67.5% 'Lucida Sans Unicode', 'Bitstream Vera Sans', 'Trebuchet Unicode MS', 'Lucida Grande', Verdana, Helvetica, sans-serif;
+	font-size:14px;
+	font-weight:bold;
+	}
+#cssmenu ul{
+	background:#333333;
+	height:35px;
+	list-style:none;
+	margin:0;
+	padding:0;
+	}
+#cssmenu li{
+	float:left;
+	padding:0px;
+	}
+#cssmenu li a{
+	background:#333333 url('menu_assets/images/seperator.gif') bottom right no-repeat;
+	color:#cccccc;
+	display:block;
+	font-weight:normal;
+	line-height:35px;
+	margin:0px;
+	padding:0px 25px;
+	text-align:center;
+	text-decoration:none;
+	}
+#cssmenu li a:hover, #cssmenu ul li:hover a{
+	background: #2580a2 url('menu_assets/images/hover.gif') bottom center no-repeat;
+	color:#FFFFFF;
+	text-decoration:none;
+	}
+#cssmenu li ul{
+	background:#333333;
+	display:none;
+	height:auto;
+	padding:0px;
+	margin:0px;
+	border:0px;
+	position:absolute;
+	width:225px;
+	z-index:200;
+	/*top:1em;
+	/*left:0;*/
+	}
+#cssmenu li:hover ul{
+	display:block;
+	
+	}
+#cssmenu li li {
+	background:url('menu_assets/images/sub_sep.gif') bottom left no-repeat;
+	display:block;
+	float:none;
+	margin:0px;
+	padding:0px;
+	width:225px;
+	}
+#cssmenu li:hover li a{
+	background:none;
+	
+	}
+#cssmenu li ul a{
+	display:block;
+	height:35px;
+	font-size:12px;
+	font-style:normal;
+	margin:0px;
+	padding:0px 10px 0px 15px;
+	text-align:left;
+	}
+#cssmenu li ul a:hover, #cssmenu li ul li:hover a{
+	background:#2580a2 url('menu_assets/images/hover_sub.gif') center left no-repeat;
+	border:0px;
+	color:#ffffff;
+	text-decoration:none;
+	}
+#cssmenu p{
+	clear:left;
+	}	
+	body
+	{
+		font-family:sans-serif;
+		font-size: 12px;
+	}
+	#body_start
+	{
+		background-color:#A0CFEC;border-radius:10px;font-size:13px; padding:10px 5px 10px 10px;
+	}
+	#main_header
+	{
+		background-image:url(../jsps/images/back4.jpeg);
+		border-radius:10px;
+	}
+	#main_table
+	{
+		background-color:#348781;
+	}
+	#reg_login
+	{
+		background-color:;color:white;border-radius:5px;width:8px;
+	}
+	.welcome
+	{
+		color:white;font-size:13px;font-weight: bold;
+	}
+	
+	.adds1
+	{
+		background-color:;border-radius:10px;
+		background-color:;border-radius:10px;
+	}
+	.main_adds
+	{
+		background-color:;border-radius:10px;
+	}
+	.b_t1
+	{
+		background-color:;border-radius:10px;
+	}
+	.b_content
+	{
+		background-color:#A0CFEC;border-radius:10px;font-family:sans-serif;font-size: 13px;
+ 
+	}
+	.b_content1
+	{
+		background-color:#20b2aa;border-radius:10px;
+	}
+	.main_content{
+		font-size:14px;background-color: #95B9C7;border-radius:10px;padding-left:10px;
+	}
+	.search_rec
+	{
+		padding-left:15px;
+	}
+	.middle_search
+	{
+     background-color:#20b2aa;border-radius:10px;padding:18px;font-family: Times;font-size: 18px;width:730px;
+	}
+	.left_search
+	{
+		background-color:#20b2aa;border-radius:10px;font-family:sans-serif;
+	}
+	.save_search
+	{
+		background-color:skyblue;height:5px;font-size:12px;font-weight:bold;
+	}
+	.img_search
+	{
+		 height:25px; width:60px;border: 1;
+	}
+	.login_t
+	{
+		font-size:13px;text-align:center;
+	}
+	.login_sub
+	{
+		background-color:silver;font-family:sans-serif; font-size:15px;border-radius:5px;font-weight: bold;
+	}
+	.main_login
+	{
+		background-color:#20b2aa;border-radius:10px;font-size:16px;font-family:Zapf-Chancery; text-transform:capitalize;
+	}
+	input
+	{
+		text-align: left;
+		color:;
+		border-bottom-color:sienna;
+		width: ;
+		height:21px;
+	}
+	.seek
+	{
+		font-style: italic;font-size:13px;font-weight: bold;text-decoration: overline underline blink; 
+	}
+	.img_big
+	{
+	width:230px;height:230px;padding:5px 5px 5px 10px;border-radius:20px;border:1px;
+	}
+	.img_small
+	{
+		width:125px; height:125px;border: 1;
+	}
+	.empr_all
+	{
+		font-size: 14px;font-weight: bold;
+	}
+	.empr_all1
+	{
+		font-size:;font-weight: bold;
+	}
+	#peredit_pad
+	{
+		padding-top:15px;padding-right:10px;
+	}	
+	.pro_job_set
+	{
+		border-radius:10px;background-color:#95B9C7;font-size:13px;
+	}
+	.top_comp
+	{
+		background-color:#20b2aa;
+	}
+	#out
+	{
+		font-size:12px;height:30px;font-weight: bold;
+	}
+	#footer
+	{
+		background-color:#20b2aa;font-size:12px;height:30px;color: white;
+	}
+	

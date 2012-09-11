@@ -27,6 +27,6 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>jsps/index.html</welcome-file>
+        <welcome-file>jsps/mainhome_index.html</welcome-file>
     </welcome-file-list>
 </web-app>

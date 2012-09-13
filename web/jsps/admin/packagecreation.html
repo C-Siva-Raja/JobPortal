@@ -5,11 +5,7 @@
   <link href="../../css/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
   <link href="../../css/style.css" rel="stylesheet" type="text/css" />
   <script type="text/javascript">
-            $(document).ready(function () {
-                $('#comedit').click(function () {
-                    $.braviPopUp('<h2>Change Password details</h2>', 'Admin_chpwd.html', 600, 300);
-                });
-            });  
+            
                 function onFocus() {
         		document.getElementById("np").style.display="none";        
         }
@@ -138,10 +134,10 @@ slideit()
 														  
                         <tr><td><strong><center>Create Package</center></strong></td></tr>
                         <tr><td>&nbsp;</td></tr>
-                                        <tr><td><tr><td><table cellpadding="5" cellspacing="5" align="center" >           
+                                        <tr><td><tr><td><table cellpadding="3" cellspacing="3" align="center" id="body_start">           
                                                     
                                                     <tr><td width="51%">Select Package Name</td>
-                                                    <td width="49%"><select id="package" name="packname" onchange="onPackageSelect(this.value)">
+                                                    <td width="49%"><select  name="packname" onchange="onPackageSelect(this.value)">
                                                     <option value="0">---- Select Package ----</option>
                                                     <option value="pack1">package 1</option>
                                                     <option value="pack2">package 2</option>
@@ -150,12 +146,12 @@ slideit()
 																	<tr>
 																		<td colspan="2">
 																			<div id="np">
-																			<table width="">
+																			<!--<table width="100%" id="body_start">-->
 																				<tr>
-																					<td width="52%">Pakcage Name</td>
-																					<td width="48%"><input type="text" name="packagename"></input></td>																				
+                                                                                                                                                                    <td width="47%" >Pakcage Name</td>
+																					<td width="1%"><input type="text" name="packagename"></input></td>																				
 																				</tr>																				
-																			</table>																			
+																			<!--</table>-->																			
 																			</div>
 																		</td>																		
 																	</tr>                                                    

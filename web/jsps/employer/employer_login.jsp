@@ -32,7 +32,7 @@
                                             <!--  table start here  -->
                                             <table border="0" width="100%" >
                                                 <!--body content right -->	
-                                               <form action="employerhome_index.jsp">
+                                               <form action="employer_home.jsp">
                                                 <table border="0" width="100%" class="login_t">
                                                     <tr><td>&nbsp;</td></tr>
                                                     <caption class="seek">Employer Login Page</caption>

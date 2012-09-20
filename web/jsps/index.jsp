@@ -8,13 +8,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-       <link href="../css/menus/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
+        <link href="../css/menus/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
         <link href="../css/style.css" rel="stylesheet" type="text/css" />
     </head>
-    <body bgcolor="#E5E5E5">
-        <jsp:include page="index_head.jsp"></jsp:include>
-        <table width="1000px" align="center">
-            <tr>
+    <body><table align="center" style="width: 1000px ">
+            <tr><td style="padding: 0px;">
+                    <jsp:include page="index_head.jsp"></jsp:include></td></tr>
+            <tr><td style="padding: 0px;">  <table width="1000px" align="center">
+                        <tr>
                             <td width="1000px" align="center" > 
                                 <!--search  start -->
                                 <table width="1000px"	align="center">
@@ -90,7 +91,7 @@
                                             <!--body end -->							
                                         </td>					
                                     </tr>
-        </table>
-        <jsp:include page="index_footer.jsp"></jsp:include>
-    </body>
-</html>
+                                </table></td></tr><tr><td style="padding: 0px;">
+                                <jsp:include page="index_footer.jsp"></jsp:include></td></tr>
+                    </table></body>
+                    </html>

@@ -6,20 +6,19 @@
 
 
 <struts-config>
-    <form-beans>
     
+    <form-beans>
     </form-beans>
     
     <global-exceptions>
-    
     </global-exceptions>
 
     <global-forwards>
-        <forward name="welcome"  path="/Welcome.do"/>
+        <forward name="Welcome"  path="/Welcome.do"/>
     </global-forwards>
 
     <action-mappings>
-        <action path="/Welcome" forward="/welcomeStruts.jsp"/>
+        <action path="/welcome" type="com.indigene.common.dao.TestConnection" ><forward name="okcon" path="/jsps/index.jsp" /></action>
     </action-mappings>
     
     <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>

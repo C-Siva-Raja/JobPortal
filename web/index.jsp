@@ -8,12 +8,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="../css/menus/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
-        <link href="../css/style.css" rel="stylesheet" type="text/css" />
+        <link href="css/menus/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
     </head>
     <body><table align="center" style="width: 1000px ">
             <tr><td style="padding: 0px;">
-                    <jsp:include page="index_head.jsp"></jsp:include></td></tr>
+                    <jsp:include page="jsps/index_head.jsp"></jsp:include></td></tr>
             <tr><td style="padding: 0px;">  <table width="1000px" align="center">
                         <tr>
                             <td width="1000px" align="center" > 
@@ -34,14 +34,14 @@
                                                     <td><input type="text" name="location" /></td>
                                                     <td></td>
                                                     <td><select name="max"><option value="0">-Years-</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></td>			
-                                                    <td></td><td><a href="" ><img src="../images/btn_search.png" alt="" class="img_search" ></td>  <!-- btn_search.png  search1.jpeg -->                  		
+                                                    <td></td><td><a href="" ><img src="images/btn_search.png" alt="" class="img_search" ></td>  <!-- btn_search.png  search1.jpeg -->                  		
                                                             </tr>
                                                             </table>			
                                                             <!-- search table end here  -->
                                                             </td>
                                                             <td width="250px" class="main_login">
                                                                 <!-- login table start here  -->
-                                                                <form action="employee/employee_home.jsp">
+                                                                <form action="jsps/employee/employee_home.jsp">
                                                                     <table border="0" width="100%" class="login_t">
                                                                         <caption class="seek">Job Seeker Login</caption>
                                                                         <tr>
@@ -53,7 +53,7 @@
                                                                             <td><input type="password" name="password" size="9"/></td>  			 	
                                                                         </tr>
                                                                         <tr>
-                                                                            <td colspan="2"><a href="employee/forgot_password.jsp" id="out">ForgotPassword</a>&nbsp;<input type="submit" class="login_sub" value="SignIn"/></td>			 	
+                                                                            <td colspan="2"><a href="jsps/employee/forgot_password.jsp" id="out">ForgotPassword</a>&nbsp;<input type="submit" class="login_sub" value="SignIn"/></td>			 	
                                                                         </tr>
                                                                     </table>	
                                                                 </form>
@@ -92,6 +92,6 @@
                                         </td>					
                                     </tr>
                                 </table></td></tr><tr><td style="padding: 0px;">
-                                <jsp:include page="index_footer.jsp"></jsp:include></td></tr>
+                                <jsp:include page="jsps/index_footer.jsp"></jsp:include></td></tr>
                     </table></body>
                     </html>

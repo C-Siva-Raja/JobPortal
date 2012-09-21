@@ -8,8 +8,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="../css/menus/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
-        <link href="../css/style.css" rel="stylesheet" type="text/css" />
+        <link href="css/menus/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
     </head>
     <body><table align="center" style="width: 1000px ">
             <tr><td style="padding: 0px;">

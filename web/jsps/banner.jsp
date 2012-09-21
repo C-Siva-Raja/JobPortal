@@ -47,7 +47,7 @@
                                             <script>
                                                 <!--
                                                 //configure the paths of the images, plus corresponding target links
-                                                slideshowimages("../images/01.jpeg","../images/02.jpeg", "../images/03.jpeg","../images/04.jpeg")
+                                                slideshowimages("images/01.jpeg","images/02.jpeg", "images/03.jpeg","images/04.jpeg")
                                                 slideshowlinks("http://gmail.com", "http://yahoo.com", "http://facebook.com")
 
                                                 //configure the speed of the slideshow, in miliseconds

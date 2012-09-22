@@ -12,7 +12,7 @@
         <link href="../../css/style.css" rel="stylesheet" type="text/css" />
     </head>
     <body bgcolor="#E5E5E5">
-        <table width="100%" >
+        <table width="1000px"  >
             <tr>
                 <td width="1000px" align="center" >
                     <table width="1000px" align="center" id="main_table">
@@ -22,7 +22,7 @@
                                 <img src="../../images/logo1.gif" alt=""  ></img>
                                 <table width="" align="right">
                                     <tr>
-                                        <td ><a href="reg_createaccount.jsp" id="out">&nbsp;Register&nbsp;</a>|<a  href="employee_home.jsp" id="out">&nbsp;Login&nbsp;</a></td>
+                                        <td ><a  href="../../" id="out">&nbsp;Login&nbsp;</a></td>
                                 </table>
                                 <!--header end  over-->							
                             </td>					
@@ -45,7 +45,7 @@
                                             </ul>   								
                                         </li>
                                         <li><a href='#'><span>Submit Resume</span></a></li>
-                                        <li style="width:490px;">&nbsp;</li><li><a href='../employer/employer_login.jsp'><span>Employer's Zone</span></a></li>
+                                       <!-- <li style="width:490px;">&nbsp;</li><li><a href='../employer/employer_login.jsp'><span>Employer's Zone</span></a></li>-->
                                     </ul>
                                 </div>
 
@@ -53,8 +53,9 @@
                             </td>					
                         </tr>
                     </table>
-                </td></tr></table>
-    <jsp:include page="employee_banner.jsp"></jsp:include>
+                </td></tr>
+            <tr><td><jsp:include page="employee_banner.jsp"></jsp:include></td></tr>
+        </table>
     </body>
 </html>
 

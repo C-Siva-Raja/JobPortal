@@ -13,8 +13,10 @@
         <link href="../../css/style.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
-        <jsp:include page="emp_reg_head.jsp"></jsp:include>
-        <table align="center" width="1000px">
+         <table align="center" width="1000px" id="main_table">
+            <tr>
+                <td><jsp:include page="emp_reg_head.jsp"></jsp:include></td>
+            </tr>
             <tr>
                 <td width="1000px"  > 
                     <!--body  start -->
@@ -28,7 +30,7 @@
                                         <tr><td>
                                                 <table border="0" id="body_start">
                                                     <tr>
-                                                        <td><span class="td_field_lable"><font color="red">*</font>Package Name :</span></td> 
+                                                        <td><font color="red">*</font>Package Name </td> 
                                                         <td><select name="pakgname">
                                                                 <option value="0">--Select--</option>
                                                                 <option value="1">packone</option>
@@ -62,9 +64,12 @@
                     <!--body end -->							
                 </td>					
             </tr>				
+       <tr>
+                <td>
+                    <jsp:include page="../footer.jsp"></jsp:include>
+                </td>
+            </tr>
         </table>
-
-        <jsp:include page="../footer.jsp"></jsp:include>
     </body>
 </html>
 

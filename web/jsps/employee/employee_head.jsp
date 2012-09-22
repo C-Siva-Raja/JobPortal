@@ -20,7 +20,7 @@
                     <table width="" align="right">
                         <tr >
                             <td class="welcome">Welcome to Mr.Raju</td>
-                            <td ><a href="../index.jsp" id="out" />Logout</a></td>
+                            <td ><a href="../../" id="out" />Logout</a></td>
                         </tr>
                     </table>
                     <!--header end -->							

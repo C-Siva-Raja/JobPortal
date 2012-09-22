@@ -13,8 +13,10 @@
         <link href="../../css/style.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
-        <jsp:include page="emp_reg_head.jsp"></jsp:include>
-        <table align="center" width="1000px">
+         <table align="center" width="1000px" id="main_table">
+            <tr>
+                <td><jsp:include page="emp_reg_head.jsp"></jsp:include></td>
+            </tr>
             <tr>
                             <td width="1000px"  > 
                                 <!--  start -->
@@ -26,7 +28,7 @@
                                                 <table width="100%" align="center">
                                                     <tr><td><span class="empr_all">Employer Payment</span></td></tr>
                                                     <tr><td>
-                                                            <table id="body_start" align="center"> 
+                                                            <table id="body_start" > 
                                                                 <tr>
                                                                     <td><font color="red">*</font><b>Select payment mode</b></td>
                                                                 </tr>
@@ -61,8 +63,11 @@
                                 <!-- end -->							
                             </td>					
                         </tr>		
+       <tr>
+                <td>
+                    <jsp:include page="../footer.jsp"></jsp:include>
+                </td>
+            </tr>
         </table>
-        
-        <jsp:include page="../footer.jsp"></jsp:include>
     </body>
 </html>

@@ -13,8 +13,11 @@
         <link href="../../css/style.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
-        <jsp:include page="emp_reg_head.jsp"></jsp:include>
-        <table align="center" width="1000px">
+        
+        <table align="center" width="1000px" id="main_table">
+            <tr>
+                <td><jsp:include page="emp_reg_head.jsp"></jsp:include></td>
+            </tr>
             <tr>
                             <td width="1000px" > 
                                 <!--body start -->
@@ -57,10 +60,12 @@
                                             <!--  table end here  -->											
                                         </td>									
                                     </tr>																					
-                               
-        </table>
-        
-        <jsp:include page="../footer.jsp"></jsp:include>
+                                    <tr>
+                                        <td>
+                                            <jsp:include page="../footer.jsp"></jsp:include>
+                                        </td>
+                                    </tr>
+                                </table>
     </body>
 </html>
 

@@ -12,8 +12,15 @@
         <link href="../../css/style.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
-        <jsp:include page="emp_reg_head.jsp"></jsp:include>
-        <table align="center" width="1000px">
+       
+         <table align="center" width="1000px" id="main_table">
+            <tr>
+                <td width="1000px;">
+                    <!-- employee_head.jsp  -->
+                     <jsp:include page="emp_reg_head.jsp"></jsp:include>
+                    <!-- end employee_head.jsp  -->
+                </td>
+            </tr>
             <tr>
                 <td width="1000px" > 
                     <!--body start -->
@@ -54,9 +61,15 @@
                                 <!--body end -->							
                             </td>					
                         </tr>
-                    </table>
+                    <tr>
+                    <td>
+                        <!-- start footer.jsp  -->
+                        <jsp:include page="../footer.jsp"></jsp:include>
+                        <!-- end  footer.jsp  -->
+                    </td>
+                </tr>
+            </table>
+    </body>
+</html>
 
-                    <jsp:include page="../footer.jsp"></jsp:include>
-                    </body>
-                    </html>
 

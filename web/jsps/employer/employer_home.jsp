@@ -13,9 +13,21 @@
         <link href="../../css/style.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
-        <jsp:include page="employer_head.jsp"></jsp:include>
-        <jsp:include page="employer_banner.jsp"></jsp:include>
-        <table align="center" width="1000px">
+        <table align="center" width="1000px" id="main_table">
+            <tr>
+                <!-- start employer_header.jsp   -->
+                <td>
+                    <jsp:include page="employer_head.jsp"></jsp:include>
+                </td>
+                <!-- end employer_header.jsp   -->
+            </tr>
+            <tr>
+                <!-- start employer_banner.jsp   -->
+                <td>
+                    <jsp:include page="employer_banner.jsp"></jsp:include>
+                </td>
+                <!-- end employer_banner.jsp   -->
+            </tr>
             <tr>
                 <td width="1000px"> 
                     <!--body start -->
@@ -66,8 +78,13 @@
                     <!--body end -->							
                 </td>					
             </tr>
+             <tr>
+                <!-- start footer.jsp   -->
+                <td>
+                     <jsp:include page="../footer.jsp"></jsp:include>
+                </td>
+                <!-- end footer.jsp   -->
+            </tr>
         </table>
-
-        <jsp:include page="../footer.jsp"></jsp:include>
     </body>
 </html>

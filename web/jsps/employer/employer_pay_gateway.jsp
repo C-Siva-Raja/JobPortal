@@ -13,8 +13,10 @@
         <link href="../../css/style.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
-        <jsp:include page="emp_reg_head.jsp"></jsp:include>
-        <table align="center" width="1000px">
+        <table align="center" width="1000px" id="main_table">
+            <tr>
+                <td><jsp:include page="emp_reg_head.jsp"></jsp:include></td>
+            </tr>
             <tr>
                             <td width="1000px"  > 
                                 <!-- start -->
@@ -23,10 +25,10 @@
                                         <td width="1000px" class="left_search">
                                             <!--  table start here  -->
                                             <form action="payment_success.jsp">
-                                                <table width="100%" align="center" id="body_start">
+                                                <table width="100%" align="center" >
                                                     <tr><td><span class="empr_all">Employer Payment</span></td></tr>
-                                                    <tr><td><table border="0" align="center" cellpadding="3" id="body_start" >
-                                                                <caption><b>Welcome to Secure Payment Gateway</b></caption>
+                                                    <tr><td><table border="0" cellpadding="3" id="body_start" >
+                                                                <tr><td><b>Welcome to Secure Payment Gateway</b></td></tr>
                                                                 <tr>
                                                                     <td>Select Type of Card</td>
                                                                     <td><select name="card">
@@ -83,8 +85,11 @@
                             </td>					
                         </tr>					
                         <tr>
+       <tr>
+                <td>
+                    <jsp:include page="../footer.jsp"></jsp:include>
+                </td>
+            </tr>
         </table>
-        
-        <jsp:include page="../footer.jsp"></jsp:include>
     </body>
 </html>

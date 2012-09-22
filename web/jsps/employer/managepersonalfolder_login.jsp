@@ -12,14 +12,20 @@
         <link href="../../css/style.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
-        <jsp:include page="employer_head.jsp"></jsp:include>
-            <table align="center" width="1000px">
+         <table align="center" width="1000px" id="main_table">
+            <tr>
+                <!-- start employer_header.jsp   -->
+                <td>
+                    <jsp:include page="employer_head.jsp"></jsp:include>
+                </td>
+                <!-- end employer_header.jsp   -->
+            </tr>
                 <tr>
                     <td width="1000px"> 
                         <!--body start -->
-                        <table width="100%"	>
+                        <table width="100%" id="">
                             <tr>
-                                <td width="750px" valign="top">
+                                <td width="750px" valign="top" class="left_search">
                                     <!-- body table1 start here  -->
                                     <table width="100%"  id="body_start" >
                                         <!--body content left -->	
@@ -46,9 +52,14 @@
                         <!--body end -->							
                     </td>					
                 </tr>
-            </table>
-
-        <jsp:include page="../footer.jsp"></jsp:include>
+            <tr>
+                <!-- start footer.jsp   -->
+                <td>
+                     <jsp:include page="../footer.jsp"></jsp:include>
+                </td>
+                <!-- end footer.jsp   -->
+            </tr>
+        </table>
     </body>
 </html>
 

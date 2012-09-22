@@ -11,7 +11,7 @@
         <link href="../css/menus/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
         <link href="../css/style.css" rel="stylesheet" type="text/css" />
     </head>
-    <body><table align="center" style="width: 1000px ">
+    <body><table align="center" style="width: 1000px " id="main_table">
             <tr><td style="padding: 0px;">
                     <jsp:include page="index_head.jsp"></jsp:include></td></tr>
             <tr><td style="padding: 0px;">  <table width="1000px" align="center">
@@ -41,7 +41,7 @@
                                                             </td>
                                                             <td width="250px" class="main_login">
                                                                 <!-- login table start here  -->
-                                                                <form action="employee/employee_home.jsp">
+                                                                <form action="jsps/employee/employee_home.jsp">
                                                                     <table border="0" width="100%" class="login_t">
                                                                         <caption class="seek">Job Seeker Login</caption>
                                                                         <tr>
@@ -53,7 +53,7 @@
                                                                             <td><input type="password" name="password" size="9"/></td>  			 	
                                                                         </tr>
                                                                         <tr>
-                                                                            <td colspan="2"><a href="employee/forgot_password.jsp" id="out">ForgotPassword</a>&nbsp;<input type="submit" class="login_sub" value="SignIn"/></td>			 	
+                                                                            <td colspan="2"><a href="jsps/employee/forgot_password.jsp" id="out">ForgotPassword</a>&nbsp;<input type="submit" class="login_sub" value="SignIn"/></td>			 	
                                                                         </tr>
                                                                     </table>	
                                                                 </form>

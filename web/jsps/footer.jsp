@@ -8,14 +8,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="../css/menus/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
+        <!--<link href="css/menus/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />-->
         <link href="../css/style.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <table width="100%">
             <tr>
                 <td width="1000px" id="footer" align="center"  valign="bottom">
-                    Copyright &copy; <a href="" id="footer">Indigene Software</a>						
+                    Copyright &copy; <a href="" id="footer">Indigene Software.......</a>						
                 </td>											
             </tr>								
         </table>

@@ -10,7 +10,7 @@ import java.io.Serializable;
  *
  * @author kvvsureshbabu
  */
-public class employee_reg implements Serializable{
+public class EmployeeRegistrationDTO implements Serializable{
     
     
     private static final long js_id=11;

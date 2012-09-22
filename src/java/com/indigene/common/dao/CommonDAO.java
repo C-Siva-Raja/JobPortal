@@ -26,15 +26,16 @@ public class CommonDAO {
     private HashMap ugsHM;
     private HashMap pgsHM;
     private String SQL_GET_COUNTRIES = "SELECT * FROM ct_country_tb";
-    private String SQL_GET_STATES = "SELECT state_id,state_name FROM ct_state_tb WHERE country_id = ?";
-    private String SQL_GET_CITIES = "SELECT city_id,city_name FROM ct_city_tb WHERE state_id = ?";
+    private String SQL_GET_STATES_WITH_COUNTRY_ID = "SELECT state_id,state_name FROM ct_state_tb WHERE country_id = ?";
+    private String SQL_GET_STATES= "SELECT state_id,state_name FROM ct_state_tb";
+    private String SQL_GET_CITIES__WITH_STATE_ID = "SELECT city_id,city_name FROM ct_city_tb WHERE state_id = ?";
+    private String SQL_GET_CITIES = "SELECT city_id,city_name FROM ct_city_tb";
     private String SQL_GET_INDUSTRIES = "SELECT * FROM ct_industry_tb";
     private String SQL_GET_UNIVERSITIES = "SELECT univ_id,university FROM ct_university_tb";
     private String SQL_GET_SPECIALIZATIONS = "SELECT * FROM ct_spec_tb";
     private String SQL_GET_UGS = "SELECT grad_id,graduation_name FROM ct_spec_ug_pg_tb WHERE graduation_type = ?";
     private String SQL_GET_PGS = "SELECT grad_id,graduation_name FROM ct_spec_ug_pg_tb WHERE graduation_type = ?";
-    
-    
+
     // public default constructer
     public CommonDAO() {
         // create connection here...
@@ -58,11 +59,11 @@ public class CommonDAO {
     }
 
     /*
-     * To get the states list from database related to given "country_id"
+     * To get the LIST OF STATES from database related to given "country_id"
      */
     public HashMap getStates(int country_id) {
         try {
-            ps = connection.prepareStatement(SQL_GET_STATES);
+            ps = connection.prepareStatement(SQL_GET_STATES_WITH_COUNTRY_ID);
             ps.setInt(1, country_id);
             rs = ps.executeQuery();
             statesHM = getSortedMap(resultSetToHashMap(rs));
@@ -73,12 +74,29 @@ public class CommonDAO {
         return statesHM;
     }
 
+    
+     /*
+     * To get the LIST OF STATES from database 
+     */
+    public HashMap getStates() {
+        try {
+            ps = connection.prepareStatement(SQL_GET_STATES);
+            rs = ps.executeQuery();
+            statesHM = getSortedMap(resultSetToHashMap(rs));
+        } catch (SQLException sqle) {
+            System.out.println("DataBase Exception....");
+            sqle.printStackTrace();
+        }
+        return statesHM;
+    }
+    
+    
     /*
-     * To get the cities list from database related to given "state_id"
+     * To get the LIST OF CITIES from database related to given "state_id"
      */
     public HashMap getCities(int state_id) {
         try {
-            ps = connection.prepareStatement(SQL_GET_CITIES);
+            ps = connection.prepareStatement(SQL_GET_CITIES__WITH_STATE_ID);
             ps.setInt(2, state_id);
             rs = ps.executeQuery();
             citiesHM = getSortedMap(resultSetToHashMap(rs));
@@ -88,6 +106,23 @@ public class CommonDAO {
         }
         return citiesHM;
     }
+    
+    /*
+     * To get the LIST OF CITIES from database
+     * 
+     */
+    public HashMap getCities() {
+        try {
+            ps = connection.prepareStatement(SQL_GET_CITIES);
+            rs = ps.executeQuery();
+            citiesHM = getSortedMap(resultSetToHashMap(rs));
+        } catch (SQLException sqle) {
+            System.out.println("DataBase Exception....");
+            sqle.printStackTrace();
+        }
+        return citiesHM;
+    }
+    
 
     /*
      * To get the LIST OF INDUSTRIES from database
@@ -103,7 +138,7 @@ public class CommonDAO {
         }
         return industriesHM;
     }
-    
+
     /*
      * To get the LIST OF UNIVERSITIES from database
      */
@@ -118,8 +153,7 @@ public class CommonDAO {
         }
         return universityHM;
     }
-    
-    
+
     /*
      * To get the LIST OF SPECIALIZATIONS from database
      */
@@ -134,8 +168,7 @@ public class CommonDAO {
         }
         return specificationsHM;
     }
-    
-    
+
     /*
      * To get the LIST OF GRADUATIONS from database
      */
@@ -151,8 +184,7 @@ public class CommonDAO {
         }
         return ugsHM;
     }
-    
-    
+
     /*
      * To get the LIST OF POSTGRADUATIONS from database
      */
@@ -168,18 +200,7 @@ public class CommonDAO {
         }
         return pgsHM;
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     /*
      * to send the data from ResulSet to HashMap
      */

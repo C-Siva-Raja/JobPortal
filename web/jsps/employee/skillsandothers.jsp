@@ -22,7 +22,7 @@
                         <tr>
                             <td width="750px"  valign="top">
                                 <!-- body table1 start here  -->
-                                <form action="employee_index.jsp">
+                                <form action="employee_home.jsp">
                                     <table width="100%" id="body_start"   >
                                         <!--body content left  class="main_content" -->	
                                         <tr><td><span class="empr_all">Step 3 of 3</span></td></tr>

@@ -24,7 +24,7 @@
                                     <!--  table start here  -->
                                     <form action="employer_pay_gateway.jsp">
                                         <table width="100%" align="center" id="body_start">
-                                            <tr><td>Successfully Paid Your Payment</td></tr>
+                                            <tr><td><center><b>Your Payment is Successfull.</b><br> And the Login credential will provided by Our Admin with in 24 Hours. <br> Thank You....</center> </td></tr>
 
                                         </table>		
                                         <!--  end -->      							

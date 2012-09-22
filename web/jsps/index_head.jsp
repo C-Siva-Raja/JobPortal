@@ -24,7 +24,7 @@
                                     <tr>
 
                                         <td ><a href="jsps/employee/reg_createaccount.jsp" id="out">&nbsp;Register&nbsp;</a>|<a  href="#" id="out">&nbsp;Login&nbsp;</a></td>
-                                        <td ><a href="jsps/employee/reg_createaccount.jsp" id="out">&nbsp;Register&nbsp;</a>|<a  href="./employee/reg_createaccount.jsp" id="out">&nbsp;Login&nbsp;</a></td>
+                                       
 
                                 </table>
                                 <!--header end  over-->							

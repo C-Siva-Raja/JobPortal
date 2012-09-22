@@ -5,8 +5,8 @@
 package com.indigene.common.dao;
 
 import java.util.*;
-import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
+//import net.sf.json.JSONArray;
+//import net.sf.json.JSONObject;
 
 /**
  *
@@ -30,9 +30,9 @@ public class Test {
         
         System.out.println("After"+hmp2);
         
-       JSONObject json = new JSONObject();
-    json.putAll(hmp);
-    System.out.printf( "JSON: %s", json.toString(2) );
+      // JSONObject json = new JSONObject();
+    //json.putAll(hmp);
+   // System.out.printf( "JSON: %s", json.toString(2) );
 
     }
     

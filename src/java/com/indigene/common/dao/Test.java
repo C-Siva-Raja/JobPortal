@@ -5,6 +5,8 @@
 package com.indigene.common.dao;
 
 import java.util.*;
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 
 /**
  *
@@ -14,7 +16,7 @@ public class Test {
     
     public static void main(String []args){
         
-        HashMap hmp=new HashMap();
+        HashMap<String, Object> hmp=new HashMap();
         hmp.put("1", "zabs");
         hmp.put("4", "dgh");
         hmp.put("3", "hb");
@@ -28,8 +30,10 @@ public class Test {
         
         System.out.println("After"+hmp2);
         
-        System.out.println("After"+hmp2);
-        
+       JSONObject json = new JSONObject();
+    json.putAll(hmp);
+    System.out.printf( "JSON: %s", json.toString(2) );
+
     }
     
     public static HashMap getSortedMap(HashMap hmap) {

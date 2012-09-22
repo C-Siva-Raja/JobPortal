@@ -8,6 +8,7 @@
 <struts-config>
     
     <form-beans>
+        <form-bean name="adminForm" type="com.indigene.admin.actionform.AdminForm"></form-bean>
     </form-beans>
     
     <global-exceptions>
@@ -18,7 +19,16 @@
     </global-forwards>
 
     <action-mappings>
-        <action path="/welcome" type="com.indigene.common.dao.TestConnection" ><forward name="okcon" path="/jsps/index.jsp" /></action>
+        <action path="/welcome" type="com.indigene.common.dao.TestConnection" >
+                <forward name="okcon" path="/jsps/index.jsp" />
+        </action>
+        <action path="/adminLogin" name="adminForm" type="com.indigene.admin.action.AdminLoginAction">
+            <forward name="success" path="/jsps/admin/packagecreation.jsp"></forward>
+            <forward name="fail" path="/"></forward>
+        </action>
+        <action path="/droupDownListAction" type="com.indigene.common.dao.DDLDispatchAction" parameter="method">
+            <forward name="res" path="/js/newjsp.jsp"></forward>
+        </action>
     </action-mappings>
     
     <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>

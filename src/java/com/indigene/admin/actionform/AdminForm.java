@@ -11,7 +11,7 @@ import org.apache.struts.action.ActionForm;
  *
  * @author sivaraja
  */
-public class AdminDTO extends ActionForm{
+public class AdminForm extends ActionForm{
     
     private String loginName;
     private String password;

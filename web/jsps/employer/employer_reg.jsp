@@ -24,7 +24,7 @@
                         <tr>
                             <td width="750px" class="left_search">
                                 <!--  table start here  -->
-                                <form action="employer_package.jsp">
+                                <form action="employer_information.jsp">
                                     <table width="100%" align="left" >
                                         
                                         <tr><td>

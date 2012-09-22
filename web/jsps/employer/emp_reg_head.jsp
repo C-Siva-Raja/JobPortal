@@ -25,7 +25,7 @@
 
                                         <td ></td>
 
-                                        <td ><a  href="employee/employer_login.jsp" id="out">&nbsp;Login&nbsp;</a></td>
+                                        <td ><a  href="employer_login.jsp" id="out">&nbsp;Login&nbsp;</a></td>
                                 </table>
                                 <!--header end  over-->							
                             </td>					
@@ -58,7 +58,9 @@
                     </table>
                 </td></tr>
             <tr>
-                <td><jsp:include page="employer_banner.jsp"></jsp:include>
+                <td>
+                    <!-- start banner page -->
+                    <!-- end banner page -->
                 </td>
             </tr>
             </table>

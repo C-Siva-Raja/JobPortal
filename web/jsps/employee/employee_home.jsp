@@ -21,13 +21,6 @@
                     <!-- end employee_head.jsp  -->
                 </td>
             </tr>
-           <tr>
-                <td width="1000px;">
-                    <!-- employee_banner.jsp  -->
-                    <jsp:include page="employee_banner.jsp"></jsp:include>
-                    <!-- end employee_banner.jsp  -->
-                </td>
-            </tr>
             <tr>
                 <td width="1000px"> 
                     <!--body start -->

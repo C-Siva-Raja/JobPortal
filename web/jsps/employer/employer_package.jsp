@@ -24,7 +24,7 @@
                         <tr>
                             <td width="1000px" class="left_search">
                                 <!--  table start here  -->
-                                <form action="employer_payment.jsp">
+                                <form action="#">
                                     <table width="100%" align="center">
                                         <tr><td><span class="empr_all">Employer Package</span></td></tr>
                                         <tr><td>

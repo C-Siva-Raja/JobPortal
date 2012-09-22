@@ -12,7 +12,7 @@ import java.util.*;
  *
  * @author sivaraja
  */
-public class CommonDAO {
+public class CommonUtilitiesDAO implements ICommonUtilitiesDAO{
 
     private Connection connection = null;
     private PreparedStatement ps = null;
@@ -37,7 +37,7 @@ public class CommonDAO {
     private String SQL_GET_PGS = "SELECT grad_id,graduation_name FROM ct_spec_ug_pg_tb WHERE graduation_type = ?";
 
     // public default constructer
-    public CommonDAO() {
+    public CommonUtilitiesDAO() {
         // create connection here...
         DBUtil db = DBUtil.getInstance();
         connection = db.getConnection();
@@ -204,7 +204,7 @@ public class CommonDAO {
     /*
      * to send the data from ResulSet to HashMap
      */
-    public HashMap resultSetToHashMap(ResultSet rs) throws SQLException {
+    private HashMap resultSetToHashMap(ResultSet rs) throws SQLException {
         ResultSetMetaData md = rs.getMetaData();
         int columns = md.getColumnCount();
         HashMap hm = new HashMap();
@@ -219,7 +219,7 @@ public class CommonDAO {
     /*
      * to sort the result in HashMap @param hmap @return HashMap
      */
-    public HashMap getSortedMap(HashMap hmap) {
+    private HashMap getSortedMap(HashMap hmap) {
         List mapKeys = new ArrayList(hmap.keySet());
         List mapValues = new ArrayList(hmap.values());
         Collections.sort(mapValues);

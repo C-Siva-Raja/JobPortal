@@ -59,7 +59,7 @@ CREATE TABLE `ct_city_tb` (
   `state` int(11) DEFAULT NULL,
   PRIMARY KEY (`city_id`),
   KEY `state` (`state`),
-  CONSTRAINT `ct_city_tb_ibfk_1` FOREIGN KEY (`state`) REFERENCES `ct_city_tb` (`city_id`)
+  CONSTRAINT `ct_city_tb_ibfk_1` FOREIGN KEY (`state`) REFERENCES `ct_state_tb` (`state_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 

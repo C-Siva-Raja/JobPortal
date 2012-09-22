@@ -134,27 +134,27 @@
                                         <tr><td height="100">
                                                 <table  class="pro_job_set" width="100%">
                                                     <tr><td><b>Profile Performance</b> <hr></td></tr>
-                                                    <tr><td><b>Views:ï¿½</b>&nbsp;<i>04</i></td></tr>
-                                                    <tr><td><b>Downloads:ï¿½</b>&nbsp;<i>10</i></td></tr>
-                                                    <tr><td><b>Contacts:ï¿½</b>&nbsp;<i>05</i></td></tr>
+                                                    <tr><td><b>Views:</b>&nbsp;<i>04</i></td></tr>
+                                                    <tr><td><b>Downloads:</b>&nbsp;<i>10</i></td></tr>
+                                                    <tr><td><b>Contacts:</b>&nbsp;<i>05</i></td></tr>
                                                 </table>
                                             </td>
                                         </tr>
                                         <tr ><td height="100">
                                                 <table  class="pro_job_set" width="100%">
                                                     <tr><td><b>JobRecommendations</b><hr></td></tr>
-                                                    <tr><td><a href="">Recommendationsï¿½</a></td></tr>
-                                                    <tr><td><a href="">Applicationsï¿½</a></td></tr>
-                                                    <tr><td><a href="">Saved Jobsï¿½</a></td></tr>
+                                                    <tr><td><a href="">Recommendations</a></td></tr>
+                                                    <tr><td><a href="">Applications</a></td></tr>
+                                                    <tr><td><a href="">Saved Jobs</a></td></tr>
                                                 </table>
 
                                             </td></tr>
                                         <tr ><td height="100">
                                                 <table  class="pro_job_set" width="100%">
                                                     <tr><td width="100%"><b>Settings</b><hr></td></tr>
-                                                    <tr><td><a href="">Blocked companiesï¿½</a></td></tr>
-                                                    <tr><td><a href="" id="communication">Communicationï¿½</a></td></tr>
-                                                    <tr><td><a href="#" id="visibility">Visibilityï¿½</a></td></tr>
+                                                    <tr><td><a href="">Blocked companies</a></td></tr>
+                                                    <tr><td><a href="" id="communication">Communication</a></td></tr>
+                                                    <tr><td><a href="#" id="visibility">Visibility</a></td></tr>
                                                 </table>
 
                                             </td></tr>

@@ -59,11 +59,12 @@
                             </tr>
 
                         <tr>
-                                        <td>
-                                            <jsp:include page="../footer.jsp"></jsp:include>
-                                        </td>
-                                    </tr>
-                                </table>
+                    <td>
+                        <!-- start footer.jsp  -->
+                        <jsp:include page="../footer.jsp"></jsp:include>
+                        <!-- end  footer.jsp  -->
+                    </td>
+                </tr>
+            </table>
     </body>
 </html>
-                    

@@ -16,7 +16,11 @@
         
         <table align="center" width="1000px" id="main_table">
             <tr>
-                <td><jsp:include page="emp_reg_head.jsp"></jsp:include></td>
+                <td width="1000px;">
+                    <!-- employee_head.jsp  -->
+                     <jsp:include page="emp_login_head.jsp"></jsp:include>
+                    <!-- end employee_head.jsp  -->
+                </td>
             </tr>
             <tr>
                             <td width="1000px" > 
@@ -38,7 +42,7 @@
                                                <form action="employer_home.jsp">
                                                 <table border="0" width="100%" class="login_t">
                                                     <tr><td>&nbsp;</td></tr>
-                                                    <caption class="seek">Employer Login Page</caption>
+                                                    <caption class="seek">Job Seeker Login Page</caption>
 
                                                     <tr>
                                                         <td>username</td> 
@@ -49,10 +53,10 @@
                                                         <td><input type="password" name="password" size="9"/></td>  			 	
                                                     </tr>
                                                     <tr>
-                                                        <td colspan="2"><a href="forgotpassword.jsp" id="out">ForgotPassword</a>&nbsp;<input type="submit" class="login_sub" value="SignIn"/></td>			 	
+                                                        <td colspan="2"><a href="forgot_password.jsp" id="out">ForgotPassword</a>&nbsp;<input type="submit" class="login_sub" value="SignIn"/></td>			 	
                                                     </tr>
                                                     <tr>
-                                                        <td></td><td align="left" ><a href="employer_reg.jsp" id="out">Registration&nbsp;Here</a></td>			 	
+                                                        <td></td><td align="left" ><a href="reg_createaccount.jsp" id="out">Registration&nbsp;Here</a></td>			 	
                                                     </tr>
                                                 </table>	
                                             </form>
@@ -61,12 +65,11 @@
                                         </td>									
                                     </tr>																					
                                     <tr>
-                <!-- start footer.jsp   -->
-                <td>
-                     <jsp:include page="../footer.jsp"></jsp:include>
-                </td>
-                <!-- end footer.jsp   -->
-            </tr>
-        </table>
+                                        <td>
+                                            <jsp:include page="../footer.jsp"></jsp:include>
+                                        </td>
+                                    </tr>
+                                </table>
     </body>
 </html>
+

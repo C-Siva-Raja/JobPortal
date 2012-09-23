@@ -24,7 +24,7 @@
                         <tr>
                             <td width="750px" class="left_search">
                                 <!--  table start here  -->
-                                <form action="employer_package.jsp">
+                                <form action="employer_information.jsp">
                                     <table width="100%" align="left" >
                                         
                                         <tr><td>
@@ -130,10 +130,12 @@
                     <!--end -->							
                 </td>					
             </tr>				
-            <tr>
+           <tr>
+                <!-- start footer.jsp   -->
                 <td>
-                    <jsp:include page="../footer.jsp"></jsp:include>
+                     <jsp:include page="../footer.jsp"></jsp:include>
                 </td>
+                <!-- end footer.jsp   -->
             </tr>
         </table>
     </body>

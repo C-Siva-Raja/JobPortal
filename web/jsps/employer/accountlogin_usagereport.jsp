@@ -54,9 +54,13 @@
                         <!--body end -->							
                     </td>					
                 </tr>
-            </table>
-
-        <jsp:include page="../footer.jsp"></jsp:include>
+            <tr>
+                <!-- start footer.jsp   -->
+                <td>
+                     <jsp:include page="../footer.jsp"></jsp:include>
+                </td>
+                <!-- end footer.jsp   -->
+            </tr>
+        </table>
     </body>
 </html>
-

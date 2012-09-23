@@ -14,7 +14,9 @@
     <body>
         <table align="center" width="1000px" id="main_table">
             <tr>
-                <td><jsp:include page="emp_reg_head.jsp"></jsp:include></td>
+                <td>
+                    
+                    <jsp:include page="emp_reg_head.jsp"></jsp:include></td>
             </tr>
             <tr>
                 <td width="1000px"  > 
@@ -107,9 +109,11 @@
                 </td>					
             </tr>				
             <tr>
+                <!-- start footer.jsp   -->
                 <td>
-                    <jsp:include page="../footer.jsp"></jsp:include>
+                     <jsp:include page="../footer.jsp"></jsp:include>
                 </td>
+                <!-- end footer.jsp   -->
             </tr>
         </table>
     </body>

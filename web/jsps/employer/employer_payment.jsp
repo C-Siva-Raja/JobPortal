@@ -63,11 +63,13 @@
                                 <!-- end -->							
                             </td>					
                         </tr>		
-       <tr>
-                <td>
-                    <jsp:include page="../footer.jsp"></jsp:include>
-                </td>
+                        <tr>
+                            <!-- start footer.jsp   -->
+                            <td>
+                            <jsp:include page="../footer.jsp"></jsp:include>
+                        </td>
+                        <!-- end footer.jsp   -->
             </tr>
-        </table>
+         </table>
     </body>
 </html>

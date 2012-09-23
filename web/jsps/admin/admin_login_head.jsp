@@ -1,11 +1,6 @@
-<%-- 
-    Document   : admin_head1
-    Created on : 22 Sep, 2012, 1:32:39 PM
-    Author     : ramu
---%>
 
 <%-- 
-    Document   : employer_head
+    Document   : admin_login_head
     Created on : 20 Sep, 2012, 2:34:01 PM
     Author     : sivaraja
 --%>

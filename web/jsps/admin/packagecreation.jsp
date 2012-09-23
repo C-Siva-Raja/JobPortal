@@ -37,7 +37,7 @@
 			<table width="1000px" align="center" id="main_table">
 					<tr>
                                             <td>
-                                              <jsp:include page="admin_head.jsp"/>  
+                                              <jsp:include page='admin_head1.jsp'/>  
                                             </td>						
 					</tr>
 					

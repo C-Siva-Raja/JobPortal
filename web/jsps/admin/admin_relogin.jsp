@@ -1,15 +1,17 @@
 <%-- 
-    Document   : admin_index
-    Created on : 22 Sep, 2012, 1:10:48 PM
-    Author     : ramu
+    Document   : admin_relogin
+    Created on : 23 Sep, 2012, 12:08:09 PM
+    Author     : sivaraja
 --%>
 
+<%@taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
+<%@taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
 <html>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8" >
         <TITLE>.</TITLE>
-        <link href="../../css/menus/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
-        <link href="../../css/style.css" rel="stylesheet" type="text/css" />
+        <link href="../css/menus/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
+        <link href="../css/style.css" rel="stylesheet" type="text/css" />
 
     </head>
 
@@ -20,7 +22,7 @@
                     <table width="1000px" align="center" id="main_table">
                         <tr>
                             <td>
-                                <jsp:include page="admin_head1.jsp"/>
+                                <jsp:include page="admin_login_head.jsp"/>
                             </td>						
                         </tr>
 
@@ -47,14 +49,17 @@
                         <tr>
                             <td width="1000px" > 
                                 <!--body start -->
-                                <form action="packagecreation.jsp">
+                                <form action="./adminLogin.do">
                                     <table width="100%">
                                         <tr>
                                             <td width="1000px">
                                                 <!-- body table1 start here  -->
                                                 <table width="100%" id="body_start">
-                                                    <!--body content left -->	
-
+                                                    <!--body content left -->
+                                                    <tr><td align="center">
+                                                    <!--ERROR MESSAGE  -->
+                                                    <bean:write name="failString" scope="request"></bean:write></td></tr>                                                   
+                                                    <tr><td>&nbsp;</td></tr>
                                                     <tr><td>&nbsp;</td></tr>
                                                     <tr><td><center><strong>Admin Login</strong></center></td></tr>
                                         <tr><td><table cellpadding="3" cellspacing="3" align="center" id="body_start">
@@ -92,4 +97,4 @@
     </td>
 </tr>
 </table>
-</body>
+    </body></html>

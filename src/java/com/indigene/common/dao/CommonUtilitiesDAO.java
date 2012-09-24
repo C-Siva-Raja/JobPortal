@@ -5,8 +5,10 @@
 package com.indigene.common.dao;
 
 import com.indigene.common.dbutil.DBUtil;
+import com.indigene.common.valueobject.PackageVO;
 import java.sql.*;
 import java.util.*;
+import org.apache.commons.beanutils.BeanUtils;
 
 /**
  *
@@ -25,6 +27,7 @@ public class CommonUtilitiesDAO implements ICommonUtilitiesDAO{
     private HashMap specificationsHM;
     private HashMap ugsHM;
     private HashMap pgsHM;
+    private List<PackageVO> packVOList;
     private String SQL_GET_COUNTRIES = "SELECT * FROM ct_country_tb";
     private String SQL_GET_STATES_WITH_COUNTRY_ID = "SELECT state_id,state_name FROM ct_state_tb WHERE country_id = ?";
     private String SQL_GET_STATES= "SELECT state_id,state_name FROM ct_state_tb";
@@ -35,7 +38,7 @@ public class CommonUtilitiesDAO implements ICommonUtilitiesDAO{
     private String SQL_GET_SPECIALIZATIONS = "SELECT * FROM ct_spec_tb";
     private String SQL_GET_UGS = "SELECT grad_id,graduation_name FROM ct_spec_ug_pg_tb WHERE graduation_type = ?";
     private String SQL_GET_PGS = "SELECT grad_id,graduation_name FROM ct_spec_ug_pg_tb WHERE graduation_type = ?";
-
+    private String SQL_GET_Pkgs= "SELECT * FROM ct_package_tb";
     // public default constructer
     public CommonUtilitiesDAO() {
         // create connection here...
@@ -215,6 +218,36 @@ public class CommonUtilitiesDAO implements ICommonUtilitiesDAO{
         }
         return hm;
     }
+    
+    /*
+     * to get all the PACKAGES LIST from Database
+     * 
+     */
+    
+    public List<PackageVO> getPackages(){
+        
+        try {
+            ps = connection.prepareStatement(SQL_GET_Pkgs);
+            rs = ps.executeQuery();
+            PackageVO packVO=new PackageVO();
+            while(rs.next()){
+                packVO.setPackageID(rs.getString("package_id"));
+                packVO.setPackageName(rs.getString("package_name"));
+                packVO.setDescription(rs.getString("description"));
+                packVO.setCountryID(rs.getInt("package_country"));
+                packVO.setPrice(rs.getInt("package_price"));
+                packVO.setStatus(rs.getInt("status"));
+                packVOList.add(packVO);
+            }
+           
+        } catch (SQLException sqle) {
+            System.out.println("DataBase Exception....");
+            sqle.printStackTrace();
+        }
+        return packVOList;
+    }
+    
+    
 
     /*
      * to sort the result in HashMap @param hmap @return HashMap

@@ -3,11 +3,12 @@
     Created on : 22 Sep, 2012, 1:10:48 PM
     Author     : sivaraja
 --%>
-
-<html>
+<%@taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
+<%@taglib  uri="http://struts.apache.org/tags-bean" prefix="bean" %>
+<html:html>
     <head>
-        <link href="../../css/menus/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
-        <link href="../../css/style.css" rel="stylesheet" type="text/css" />
+        <link href="css/menus/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
     </head>
 
     <body bgcolor="#E5E5E5">
@@ -44,7 +45,7 @@
                         <tr>
                             <td width="1000px" > 
                                 <!--body start -->
-                                <form action="./adminLogin.do">
+                                <html:form action="adminLogin">
                                     <table width="100%">
                                         <tr>
                                             <td width="1000px">
@@ -67,7 +68,7 @@
 
                         </tr>																					
                     </table>
-                    </form>
+                    </html:form>
                     <!--body end -->							
                 </td>					
             </tr>
@@ -89,4 +90,4 @@
     </td>
 </tr>
 </table>
-    </body></html>
+    </body></html:html>

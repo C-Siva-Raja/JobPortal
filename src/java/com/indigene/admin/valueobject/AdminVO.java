@@ -15,7 +15,7 @@ public class AdminVO implements Serializable{
     
     private String loginName;
     private String password;
-    private Date loginTime;
+    private String loginTime;
     private String userType;
     
     
@@ -27,7 +27,7 @@ public class AdminVO implements Serializable{
 
     // parameterized Constructor
     
-    public AdminVO(String loginName, String password, Date loginTime, String userType) {
+    public AdminVO(String loginName, String password, String loginTime, String userType) {
         this.loginName = loginName;
         this.password = password;
         this.loginTime = loginTime;
@@ -42,11 +42,11 @@ public class AdminVO implements Serializable{
         this.loginName = loginName;
     }
 
-    public Date getLoginTime() {
+    public String getLoginTime() {
         return loginTime;
     }
 
-    public void setLoginTime(Date loginTime) {
+    public void setLoginTime(String loginTime) {
         this.loginTime = loginTime;
     }
 

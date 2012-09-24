@@ -46,12 +46,13 @@ public class AdminDAO {
     /*
      * checking ADMIN login credentials
      */
-    public AdminVO checkForValidity(AdminVO avo) throws SQLException {
+    public String checkForValidity(AdminVO avo) throws SQLException {
         AdminVO dbavo = getAdminDetails();
+        String result=null;
        System.out.println(dbavo.getLoginName()+"---"+dbavo.getPassword());
        System.out.println(avo.getLoginName()+"---"+avo.getPassword());
         if ((avo.getLoginName() != "" && !avo.getLoginName().equals("")) && (avo.getPassword() != "" && !avo.getPassword().equals(""))) {
-            if (avo.getLoginName().equals(dbavo.getLoginName()) && avo.getPassword().equals(dbavo.getPassword())) {
+            if (dbavo.getLoginName().equals(avo.getLoginName()) && dbavo.getPassword().equals(avo.getPassword())) {
 
                 System.out.println("admin login credentials success...");
  
@@ -66,16 +67,14 @@ public class AdminDAO {
                 } else
                     System.out.println("admin login time is not recorded");
                 
-                avo.setLoginTime(date); // 3rd
+                result=date.toString();
             } else {
                 System.out.println("admin login credentials are not match...");
-                avo=null;
             }
         } else {
             System.out.println("admin login credentials are empty..");
-            avo=null;
         }
-        return avo;
+        return result;
 
     }
 
@@ -85,7 +84,7 @@ public class AdminDAO {
         while (rs.next()) {
             avo.setLoginName(rs.getString(1));
             avo.setPassword(rs.getString(2));
-            avo.setLoginTime(rs.getTimestamp(3));
+            avo.setLoginTime(rs.getTimestamp(3).toString());
         }
         return avo;
     }

@@ -3,8 +3,9 @@
     Created on : 23 Sep, 2012, 2:11:04 PM
     Author     : sivaraja
 --%>
-
-<html>
+<%@taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
+<%@taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
+<html:html>
     <head>
         <link href="../../css/menus/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
         <link href="../../css/style.css" rel="stylesheet" type="text/css" />
@@ -47,4 +48,4 @@
     </td>
 </tr>
 </table>
-</body></html>
+</body></html:html>

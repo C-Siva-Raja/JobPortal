@@ -15,7 +15,7 @@ public class AdminForm extends ActionForm{
     
     private String loginName;
     private String password;
-    private Date loginTime;
+    private String loginTime;
     private String userType;
 
     public String getLoginName() {
@@ -26,11 +26,11 @@ public class AdminForm extends ActionForm{
         this.loginName = loginName;
     }
 
-    public Date getLoginTime() {
+    public String getLoginTime() {
         return loginTime;
     }
 
-    public void setLoginTime(Date loginTime) {
+    public void setLoginTime(String loginTime) {
         this.loginTime = loginTime;
     }
 

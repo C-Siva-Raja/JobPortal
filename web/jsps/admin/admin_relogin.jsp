@@ -6,12 +6,10 @@
 
 <%@taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
-<html>
+<html:html>
     <head>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8" >
-        <TITLE>.</TITLE>
-        <link href="../css/menus/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
-        <link href="../css/style.css" rel="stylesheet" type="text/css" />
+        <link href="../../css/menus/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
+        <link href="../../css/style.css" rel="stylesheet" type="text/css" />
 
     </head>
 
@@ -49,7 +47,7 @@
                         <tr>
                             <td width="1000px" > 
                                 <!--body start -->
-                                <form action="./adminLogin.do">
+                                <html:form action="adminLogin">
                                     <table width="100%">
                                         <tr>
                                             <td width="1000px">
@@ -58,13 +56,14 @@
                                                     <!--body content left -->
                                                     <tr><td align="center">
                                                     <!--ERROR MESSAGE  -->
-                                                    <bean:write name="failString" scope="request"></bean:write></td></tr>                                                   
+                                                    Your Login credentials are wrong. So please check and try again...
+                                                    </td></tr>                                                   
                                                     <tr><td>&nbsp;</td></tr>
                                                     <tr><td>&nbsp;</td></tr>
                                                     <tr><td><center><strong>Admin Login</strong></center></td></tr>
                                         <tr><td><table cellpadding="3" cellspacing="3" align="center" id="body_start">
-                                                    <tr><td>AdminId/Name</td><td><input type="text" name="adminid"/></td></tr>
-                                                    <tr><td>Password</td><td><input type="password" name="adminpassword"/></td></tr>
+                                                    <tr><td>AdminId/Name</td><td><input type="text" name="loginName"/></td></tr>
+                                                    <tr><td>Password</td><td><input type="password" name="password"/></td></tr>
                                                     <tr><td></td><td><input type="submit" value="signin"/></td></tr>
                                                     <tr><td>&nbsp;</td></tr>
                                                     <tr><td>&nbsp;</td></tr>
@@ -75,7 +74,7 @@
 
                         </tr>																					
                     </table>
-                    </form>
+                    </html:form>
                     <!--body end -->							
                 </td>					
             </tr>
@@ -97,4 +96,4 @@
     </td>
 </tr>
 </table>
-    </body></html>
+    </body></html:html>

@@ -8,6 +8,10 @@
             <param-value>/WEB-INF/struts-config.xml</param-value>
         </init-param>
         <init-param>
+            <param-name>config/jsps/admin</param-name>
+            <param-value>/WEB-INF/struts-config-admin.xml</param-value>
+        </init-param>
+        <init-param>
             <param-name>debug</param-name>
             <param-value>2</param-value>
         </init-param>
@@ -28,7 +32,7 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>jsps/admin/admin_login.jsp</welcome-file>
+        <welcome-file>jsps/index.jsp</welcome-file>
     </welcome-file-list>
     
       <resource-ref>  

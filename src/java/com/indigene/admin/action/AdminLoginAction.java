@@ -11,6 +11,7 @@ import java.util.Date;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import org.apache.commons.beanutils.BeanUtils;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
@@ -31,22 +32,19 @@ public class AdminLoginAction extends Action{
         
         AdminForm adminform=(AdminForm)form;
         AdminVO avo=new AdminVO();
-        avo.setLoginName(adminform.getLoginName()); // 1st
-        avo.setPassword(adminform.getPassword());  // 2nd
-        Date date=new Date();
-        
+        System.out.println("-----------username------"+adminform.getLoginName());
+        System.out.println("------password--------"+adminform.getPassword());
+        BeanUtils.copyProperties(avo, adminform);
         AdminDAO admindao=new AdminDAO();
-        avo=admindao.checkForValidity(avo);
-        if(avo != null){
+        String date=admindao.checkForValidity(avo);
+        if(date != null){
+            avo.setLoginTime(date); //3rd
             avo.setUserType("ADMIN"); //4 th
             HttpSession session=request.getSession();
             session.setAttribute("adminvo", avo);
             mappingString="success" ;
         }
-        else{
-            avo=null;
-            request.setAttribute("failString", "Your Login Credentials are Wrong.<br>So, Please Enter Currect Details....");
-        }    
+        
         
         return mapping.findForward(mappingString);
     }

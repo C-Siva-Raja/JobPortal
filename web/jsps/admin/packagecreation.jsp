@@ -11,19 +11,29 @@
         <link href="../../css/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
         <link href="../../css/style.css" rel="stylesheet" type="text/css" />
 
-        <script type="text/javascript" src="../../js/jquery-1.6.js"/>
+        <script type="text/javascript" language="javascript"  src="../../js/JQuery-1-6.js"/>
         <script type="text/javascript" language="javascript"  src="../../js/dynamicContent.js"/>
         <script type="text/javascript">
-            $(document).ready(function () {
-                
-                 $('.np').hide();
-                 
-                
-            });  
+            $(document).ready( function() {
+                $("#np").hide();
+            });
+           
+            function check(){
+             alert(";lk");
+        if(document.getElementById('packageID').value=='0'){
+                    
+                }else if(document.getElementById('packageID').value=='N'){
+                    $("#np").show();
+                }
+                else{
+                    var pack=getPackDetails();
+                }
+               
+            }
         </script>
     </head>
 
-    <body bgcolor="#E5E5E5" onload="getCitiesList()">
+    <body bgcolor="#E5E5E5" onload="check()">
         <table width="100%" >
             <tr>
                 <td width="1000px" align="center" >
@@ -71,18 +81,19 @@
 
                                                             <tr><td width="50%">Select Package Name</td>
                                                                 <td width="50%">
-                                                                    <logic:notEmpty name="packagelist">
 
-                                                                        <html:select property="packageID" >
-                                                                            <logic:iterate id="PackageVO" name="packagelist">
-                                                                                <html:option value="${PackageVO.packageID}">
-                                                                                    <bean:write name="PackageVO" property="packageName"/>
-                                                                                </html:option>
-                                                                            </logic:iterate>
-                                                                            <html:option value="N">Add New Package</html:option>
-                                                                        </html:select>
 
-                                                                    </logic:notEmpty>
+                                                                    <html:select property="packageID" onchange="check();">
+                                                                        <html:option value="0">--select --</html:option>
+                                                                        <logic:iterate id="PackageVO" name="packagelist">
+                                                                            <html:option value="${PackageVO.packageID}">
+                                                                                <bean:write name="PackageVO" property="packageName"/>
+                                                                            </html:option>
+                                                                        </logic:iterate>
+                                                                        <html:option value="N">Add New Package</html:option>
+                                                                    </html:select>
+
+
                                                                     <!--                                                                    <select id="package" name="packageName" onchange="onPackageSelect(this.value)">
                                                                                                                                             <option value="0">---- Select Package ----</option>
                                                                                                                                             <option value="pack1">package 1</option>
@@ -91,8 +102,8 @@
                                                                                                                                         </select>--></td></tr>
                                                             <tr>
                                                                 <td colspan="2">
-                                                                    <div class="np">
-                                                                        <table width="">
+                                                                    <div id="np">
+                                                                        <table width="" >
                                                                             <tr>
                                                                                 <td width="51%">Package Name</td>
                                                                                 <td width="49%"><input type="text" name="packageName"></input></td>																				

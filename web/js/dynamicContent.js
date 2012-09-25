@@ -70,7 +70,7 @@ function getCitiesList(){
     
 }
 
-function getPackageDetails(){
+function getPackDetails(){
    alert("hafdyaf");
     
 }

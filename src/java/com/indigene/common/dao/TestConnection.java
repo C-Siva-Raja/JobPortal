@@ -34,7 +34,7 @@ public class TestConnection extends Action{
         }catch(Exception e){
             e.printStackTrace();
         }
-         return mapping.findForward("ok");
+         return mapping.findForward("");
         
     }
     

@@ -19,6 +19,7 @@ and open the template in the editor.
             <forward name="fail" path="/admin_relogin.jsp"></forward>
         </action>
         <action path="/adminHome" forward="/admin_home.jsp"/>
+<!--        <action path="/packageCreation" forward="/packagecreation.jsp"/>-->
         <action path="/packageCreation" name="packageForm" type="com.indigene.common.action.PackageAction">
             <forward name="success" path="/packagecreation.jsp"/>
         </action>

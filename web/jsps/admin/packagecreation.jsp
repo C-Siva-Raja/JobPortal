@@ -5,29 +5,25 @@
 --%>
 <%@taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
 <%@taglib  uri="http://struts.apache.org/tags-html" prefix="html" %>
+<%@taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
 <html:html>
     <head>
         <link href="../../css/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
         <link href="../../css/style.css" rel="stylesheet" type="text/css" />
 
-        <script type="text/javascript" src="../../js/jquery-1.6.1.min.js"/>
+        <script type="text/javascript" src="../../js/jquery-1.6.js"/>
+        <script type="text/javascript" language="javascript"  src="../../js/dynamicContent.js"/>
         <script type="text/javascript">
             $(document).ready(function () {
-                $('#comedit').click(function () {
-                    $.braviPopUp('<h2>Change Password details</h2>', 'Admin_chpwd.html', 600, 300);
-                });
-                $("#np").hide();
+                
+                 $('.np').hide();
+                 
+                
             });  
-                    
-            function onPackageSelect(packid) {
-                if(packid=="N") {
-                    $("#np").show();        
-                }   
-            } 
         </script>
     </head>
 
-    <body bgcolor="#E5E5E5">
+    <body bgcolor="#E5E5E5" onload="getCitiesList()">
         <table width="100%" >
             <tr>
                 <td width="1000px" align="center" >
@@ -70,52 +66,67 @@
                                                 <tr><td><strong><center>Create Package</center></strong></td></tr>
                                                 <tr><td>&nbsp;</td></tr>
                                                 <tr><td><tr><td><center>
-                                                    <table id="body_start">
+                                                    <html:form action="packageCreation">
+                                                        <table id="body_start">
 
-                                                        <tr><td width="50%">Select Package Name</td>
-                                                            <td width="50%"><select id="package" name="packname" onchange="onPackageSelect(this.value)">
-                                                                    <option value="0">---- Select Package ----</option>
-                                                                    <option value="pack1">package 1</option>
-                                                                    <option value="pack2">package 2</option>
-                                                                    <option value="N">Add New Package</option>
-                                                                </select></td></tr>
-                                                        <tr>
-                                                            <td colspan="2">
-                                                                <div id="np">
-                                                                    <table width="">
-                                                                        <tr>
-                                                                            <td width="51%">Package Name</td>
-                                                                            <td width="49%"><input type="text" name="packagename"></input></td>																				
-                                                                        </tr>																				
-                                                                    </table>																			
-                                                                </div>
-                                                            </td>																		
-                                                        </tr>                                                    
-                                                        <tr><td>Description</td><td><textarea name="description"></textarea></td></tr>
-                                                        <tr><td>Package_country</td><td><select name="country">
-                                                                    <option value="select">select</option>
-                                                                    <option value="india">INDIA</option>
-                                                                    <option value="usa">U.S.A</option>
-                                                                    <option value="pakistan">Pakistan</option>		
-                                                                    <option value="uk">U.K</option>
-                                                                    <option value="uae">U.A.E</option>
-                                                                    <option value="afghanistan">Afghanistan</option>
-                                                                    <option value="australia">Australia</option>
-                                                                    <option value="brazil">Brazil</option>
-                                                                    <option value="china">China</option>
-                                                                    <option value="egypt">Egypt</option>
-                                                                    <option value="france">France</option>
-                                                                </select></td></tr>
-                                                        <tr><td>Package_price</td><td><input type="text" name="packageprice"/></td></tr>
-                                                        <tr><td>Status</td><td><select name="status">
-                                                                    <option value="select">select </option>
-                                                                    <option value="active">Active</option>
-                                                                    <option value="inactive">InActive </option>
-                                                                </select></td></tr>
-                                                        <tr><td>&nbsp;</td></tr><tr><td colspan="2" align="center"><input type="submit" value="&nbsp;&nbsp;&nbsp;Send&nbsp;&nbsp;&nbsp;&nbsp;"/></td></tr>
-                                                        <tr><td></td></tr>
-                                                    </table></center>
-                                        </td></tr>
+                                                            <tr><td width="50%">Select Package Name</td>
+                                                                <td width="50%">
+                                                                    <logic:notEmpty name="packagelist">
+
+                                                                        <html:select property="packageID" >
+                                                                            <logic:iterate id="PackageVO" name="packagelist">
+                                                                                <html:option value="${PackageVO.packageID}">
+                                                                                    <bean:write name="PackageVO" property="packageName"/>
+                                                                                </html:option>
+                                                                            </logic:iterate>
+                                                                            <html:option value="N">Add New Package</html:option>
+                                                                        </html:select>
+
+                                                                    </logic:notEmpty>
+                                                                    <!--                                                                    <select id="package" name="packageName" onchange="onPackageSelect(this.value)">
+                                                                                                                                            <option value="0">---- Select Package ----</option>
+                                                                                                                                            <option value="pack1">package 1</option>
+                                                                                                                                            <option value="pack2">package 2</option>
+                                                                                                                                            <option value="N">Add New Package</option>
+                                                                                                                                        </select>--></td></tr>
+                                                            <tr>
+                                                                <td colspan="2">
+                                                                    <div class="np">
+                                                                        <table width="">
+                                                                            <tr>
+                                                                                <td width="51%">Package Name</td>
+                                                                                <td width="49%"><input type="text" name="packageName"></input></td>																				
+                                                                            </tr>																				
+                                                                        </table>																			
+                                                                    </div>
+                                                                </td>																		
+                                                            </tr>                                                    
+                                                            <tr><td>Description</td><td><textarea name="description"></textarea></td></tr>
+                                                            <tr><td>Package_country</td><td><select name="countryID">
+                                                                        <option value="select">select</option>
+                                                                        <option value="india">INDIA</option>
+                                                                        <option value="usa">U.S.A</option>
+                                                                        <option value="pakistan">Pakistan</option>		
+                                                                        <option value="uk">U.K</option>
+                                                                        <option value="uae">U.A.E</option>
+                                                                        <option value="afghanistan">Afghanistan</option>
+                                                                        <option value="australia">Australia</option>
+                                                                        <option value="brazil">Brazil</option>
+                                                                        <option value="china">China</option>
+                                                                        <option value="egypt">Egypt</option>
+                                                                        <option value="france">France</option>
+                                                                    </select></td></tr>
+                                                            <tr><td>Package_price</td><td><input type="text" name="price"/></td></tr>
+                                                            <tr><td>Status</td><td><select name="status">
+                                                                        <option value="select">select </option>
+                                                                        <option value="active">Active</option>
+                                                                        <option value="inactive">InActive </option>
+                                                                    </select></td></tr>
+                                                            <tr><td>&nbsp;</td></tr><tr><td colspan="2" align="center"><input type="submit" value="&nbsp;&nbsp;&nbsp;Send&nbsp;&nbsp;&nbsp;&nbsp;"/></td></tr>
+                                                            <tr><td></td></tr>
+                                                        </table></center>
+                                            </html:form> </td>
+                                    </tr>
                                 </table>   
 
                     </table>			
@@ -143,7 +154,5 @@
     </td>					
 </tr>
 </table>
-</td>
-</tr>
-</table>
+
 </body></html:html>

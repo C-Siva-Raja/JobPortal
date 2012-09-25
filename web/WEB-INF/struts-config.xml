@@ -25,6 +25,8 @@
         <action path="/adminSwitch" forward="/switch.do?page=/admin_login.jsp&amp;prefix=/jsps/admin"/>
         <action path="/switch" type="org.apache.struts.actions.SwitchAction" />
         
+        <action path="/droupDownListAction" type="com.indigene.common.dao.DDLDispatchAction" parameter="method">
+        </action>
         
     </action-mappings>
     

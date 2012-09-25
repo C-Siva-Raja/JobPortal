@@ -8,6 +8,8 @@ import com.indigene.common.dbutil.DBUtil;
 import com.indigene.common.valueobject.PackageVO;
 import java.sql.*;
 import java.util.*;
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 import org.apache.commons.beanutils.BeanUtils;
 
 /**
@@ -27,7 +29,7 @@ public class CommonUtilitiesDAO implements ICommonUtilitiesDAO{
     private HashMap specificationsHM;
     private HashMap ugsHM;
     private HashMap pgsHM;
-    private List<PackageVO> packVOList;
+    private List<PackageVO> packVOList=new ArrayList<PackageVO>();
     private String SQL_GET_COUNTRIES = "SELECT * FROM ct_country_tb";
     private String SQL_GET_STATES_WITH_COUNTRY_ID = "SELECT state_id,state_name FROM ct_state_tb WHERE country_id = ?";
     private String SQL_GET_STATES= "SELECT state_id,state_name FROM ct_state_tb";
@@ -49,7 +51,7 @@ public class CommonUtilitiesDAO implements ICommonUtilitiesDAO{
     /*
      * To get the countries list from database
      */
-    public HashMap getCountries() {
+    public HashMap getCountries() throws SQLException {
         try {
             ps = connection.prepareStatement(SQL_GET_COUNTRIES);
             rs = ps.executeQuery();
@@ -58,13 +60,18 @@ public class CommonUtilitiesDAO implements ICommonUtilitiesDAO{
             System.out.println("DataBase Exception....");
             sqle.printStackTrace();
         }
+        finally{
+            rs.close();
+            ps.close();
+            connection.close();
+        }
         return countriesHM;
     }
 
     /*
      * To get the LIST OF STATES from database related to given "country_id"
      */
-    public HashMap getStates(int country_id) {
+    public HashMap getStates(int country_id) throws SQLException {
         try {
             ps = connection.prepareStatement(SQL_GET_STATES_WITH_COUNTRY_ID);
             ps.setInt(1, country_id);
@@ -74,6 +81,11 @@ public class CommonUtilitiesDAO implements ICommonUtilitiesDAO{
             System.out.println("DataBase Exception....");
             sqle.printStackTrace();
         }
+        finally{
+            rs.close();
+            ps.close();
+            connection.close();
+        }
         return statesHM;
     }
 
@@ -81,7 +93,7 @@ public class CommonUtilitiesDAO implements ICommonUtilitiesDAO{
      /*
      * To get the LIST OF STATES from database 
      */
-    public HashMap getStates() {
+    public HashMap getStates() throws SQLException {
         try {
             ps = connection.prepareStatement(SQL_GET_STATES);
             rs = ps.executeQuery();
@@ -90,6 +102,11 @@ public class CommonUtilitiesDAO implements ICommonUtilitiesDAO{
             System.out.println("DataBase Exception....");
             sqle.printStackTrace();
         }
+        finally{
+            rs.close();
+            ps.close();
+            connection.close();
+        }
         return statesHM;
     }
     
@@ -97,7 +114,7 @@ public class CommonUtilitiesDAO implements ICommonUtilitiesDAO{
     /*
      * To get the LIST OF CITIES from database related to given "state_id"
      */
-    public HashMap getCities(int state_id) {
+    public HashMap getCities(int state_id) throws SQLException {
         try {
             ps = connection.prepareStatement(SQL_GET_CITIES__WITH_STATE_ID);
             ps.setInt(2, state_id);
@@ -107,6 +124,11 @@ public class CommonUtilitiesDAO implements ICommonUtilitiesDAO{
             System.out.println("DataBase Exception....");
             sqle.printStackTrace();
         }
+        finally{
+            rs.close();
+            ps.close();
+            connection.close();
+        }
         return citiesHM;
     }
     
@@ -114,7 +136,7 @@ public class CommonUtilitiesDAO implements ICommonUtilitiesDAO{
      * To get the LIST OF CITIES from database
      * 
      */
-    public HashMap getCities() {
+    public HashMap getCities() throws SQLException {
         try {
             ps = connection.prepareStatement(SQL_GET_CITIES);
             rs = ps.executeQuery();
@@ -123,6 +145,11 @@ public class CommonUtilitiesDAO implements ICommonUtilitiesDAO{
             System.out.println("DataBase Exception....");
             sqle.printStackTrace();
         }
+        finally{
+            rs.close();
+            ps.close();
+            connection.close();
+        }
         return citiesHM;
     }
     
@@ -130,7 +157,7 @@ public class CommonUtilitiesDAO implements ICommonUtilitiesDAO{
     /*
      * To get the LIST OF INDUSTRIES from database
      */
-    public HashMap getIndustries() {
+    public HashMap getIndustries() throws SQLException {
         try {
             ps = connection.prepareStatement(SQL_GET_INDUSTRIES);
             rs = ps.executeQuery();
@@ -139,13 +166,18 @@ public class CommonUtilitiesDAO implements ICommonUtilitiesDAO{
             System.out.println("DataBase Exception....");
             sqle.printStackTrace();
         }
+        finally{
+            rs.close();
+            ps.close();
+            connection.close();
+        }
         return industriesHM;
     }
 
     /*
      * To get the LIST OF UNIVERSITIES from database
      */
-    public HashMap getUniversities() {
+    public HashMap getUniversities() throws SQLException {
         try {
             ps = connection.prepareStatement(SQL_GET_UNIVERSITIES);
             rs = ps.executeQuery();
@@ -154,13 +186,18 @@ public class CommonUtilitiesDAO implements ICommonUtilitiesDAO{
             System.out.println("DataBase Exception....");
             sqle.printStackTrace();
         }
+        finally{
+            rs.close();
+            ps.close();
+            connection.close();
+        }
         return universityHM;
     }
 
     /*
      * To get the LIST OF SPECIALIZATIONS from database
      */
-    public HashMap getSpecializations() {
+    public HashMap getSpecializations() throws SQLException {
         try {
             ps = connection.prepareStatement(SQL_GET_SPECIALIZATIONS);
             rs = ps.executeQuery();
@@ -169,13 +206,18 @@ public class CommonUtilitiesDAO implements ICommonUtilitiesDAO{
             System.out.println("DataBase Exception....");
             sqle.printStackTrace();
         }
+        finally{
+            rs.close();
+            ps.close();
+            connection.close();
+        }
         return specificationsHM;
     }
 
     /*
      * To get the LIST OF GRADUATIONS from database
      */
-    public HashMap getGraduations() {
+    public HashMap getGraduations() throws SQLException {
         try {
             ps = connection.prepareStatement(SQL_GET_UGS);
             ps.setString(1, "UG");
@@ -185,13 +227,18 @@ public class CommonUtilitiesDAO implements ICommonUtilitiesDAO{
             System.out.println("DataBase Exception....");
             sqle.printStackTrace();
         }
+        finally{
+            rs.close();
+            ps.close();
+            connection.close();
+        }
         return ugsHM;
     }
 
     /*
      * To get the LIST OF POSTGRADUATIONS from database
      */
-    public HashMap getPostGraduations() {
+    public HashMap getPostGraduations() throws SQLException {
         try {
             ps = connection.prepareStatement(SQL_GET_PGS);
             ps.setString(1, "PG");
@@ -200,6 +247,11 @@ public class CommonUtilitiesDAO implements ICommonUtilitiesDAO{
         } catch (SQLException sqle) {
             System.out.println("DataBase Exception....");
             sqle.printStackTrace();
+        }
+        finally{
+            rs.close();
+            ps.close();
+            connection.close();
         }
         return pgsHM;
     }
@@ -224,7 +276,7 @@ public class CommonUtilitiesDAO implements ICommonUtilitiesDAO{
      * 
      */
     
-    public List<PackageVO> getPackages(){
+    public List<PackageVO> getPackages() throws SQLException{
         
         try {
             ps = connection.prepareStatement(SQL_GET_Pkgs);
@@ -238,11 +290,17 @@ public class CommonUtilitiesDAO implements ICommonUtilitiesDAO{
                 packVO.setPrice(rs.getInt("package_price"));
                 packVO.setStatus(rs.getInt("status"));
                 packVOList.add(packVO);
+                System.out.println(packVOList);
             }
            
         } catch (SQLException sqle) {
             System.out.println("DataBase Exception....");
             sqle.printStackTrace();
+        }
+        finally{
+            rs.close();
+            ps.close();
+            connection.close();
         }
         return packVOList;
     }
@@ -274,4 +332,26 @@ public class CommonUtilitiesDAO implements ICommonUtilitiesDAO{
         }
         return someMap;
     }
+    
+    /*
+     * to get JSON object as Sting....
+     * 
+     * 
+     */ 
+     public String getJSONString(Map data) {
+            
+        JSONArray json = new JSONArray();
+        List keys = new ArrayList(data.keySet());
+        Iterator ite = keys.iterator();
+        
+        while (ite.hasNext()) {
+            Object key = ite.next();
+            JSONObject mapjson = new JSONObject();
+            mapjson.put("id", key);
+            mapjson.put("value", data.get(key).toString());
+            json.add(mapjson);
+        }
+        return json.toString() ;
+     }
 }
+

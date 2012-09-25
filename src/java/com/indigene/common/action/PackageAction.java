@@ -8,6 +8,7 @@ import com.indigene.admin.dao.AdminDAO;
 import com.indigene.common.dao.CommonUtilitiesDAO;
 import com.indigene.common.valueobject.PackageVO;
 import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.Action;
@@ -20,14 +21,15 @@ import org.apache.struts.action.ActionMapping;
  * @author sivaraja
  */
 public class PackageAction extends Action{
-    private String mappingString="error";
+    private String mappingString="success";
 
     @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
         
-       // List<PackageVO> packlist=new ArrayList();
+        List<PackageVO> packlist=new ArrayList();
         PackageVO pvo=new PackageVO();
-      //  pvo=(new CommonUtilitiesDAO()).getPackages();
+        packlist=(new CommonUtilitiesDAO()).getPackages();
+        request.setAttribute("packagelist",packlist);
         return mapping.findForward(mappingString);
     }
     

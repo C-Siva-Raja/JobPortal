@@ -4,6 +4,7 @@
  */
 package com.indigene.common.dao;
 
+import java.io.PrintWriter;
 import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,29 +21,46 @@ public class DDLDispatchAction extends DispatchAction{
 
     public ActionForward getCountries(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
         
-        CommonUtilitiesDAO cudao=new CommonUtilitiesDAO();
-        HashMap countryList=cudao.getCountries();
-        request.setAttribute("list",countryList);
+        PrintWriter out=response.getWriter();
+        response.setContentType("text/json");
         
-        return mapping.findForward("res");
+        CommonUtilitiesDAO cudao=new CommonUtilitiesDAO();
+        String jsonString=cudao.getJSONString(cudao.getCountries());
+        
+        out.write(jsonString);
+        out.close();
+     
+        return mapping.findForward("");
     }
     
      public ActionForward getStatesList(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
         
+        PrintWriter out=response.getWriter();
+        response.setContentType("text/json"); 
+         
         CommonUtilitiesDAO cudao=new CommonUtilitiesDAO();
         HashMap list=cudao.getStates(Integer.parseInt(request.getParameter("countryCode")));
-        request.setAttribute("list",list);
+        String jsonString=cudao.getJSONString(list);
         
-        return mapping.findForward("res");
+        out.write(jsonString);
+        out.close();
+        
+        return mapping.findForward("");
     }
      
       public ActionForward getCitiesList(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
         
+        PrintWriter out=response.getWriter();
+        response.setContentType("text/json"); 
+          
         CommonUtilitiesDAO cudao=new CommonUtilitiesDAO();
         HashMap list=cudao.getCities(Integer.parseInt(request.getParameter("stateCode")));
-        request.setAttribute("list",list);
+        String jsonString=cudao.getJSONString(list);
         
-        return mapping.findForward("res");
+        out.write(jsonString);
+        out.close();
+        
+        return mapping.findForward("");
     }
     
     

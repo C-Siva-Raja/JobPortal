@@ -27,13 +27,21 @@ function getXMLHttpRequest() {
 }
 
 function getCountryList(){
-    
+    alert("jdgsj");
     var xhttp=getXMLHttpRequest();
     
     url='./droupDownListAction.do?method=getCountries';
             xhttp.open("GET", url , true);
             xhttp.send("");
             var countries = JSON.parse(xhttp.responseText);
+            
+            document.form[0].pname[0]=new Option('--select package--', 0, true);
+            for(var i=0; i < countries.length; i++){
+            var cjson = countries[i];
+            var ccode = cjson.ID;
+            var cname = cjson.VALUE;
+            document.form[0].pname[i+1] = new Option(cname,ccode, true);
+          } 
     
 }
 
@@ -59,6 +67,11 @@ function getCitiesList(){
             xhttp.open("GET", url , true);
             xhttp.send("");
             var states = JSON.parse(xhttp.responseText);
+    
+}
+
+function getPackageDetails(){
+   alert("hafdyaf");
     
 }
 
